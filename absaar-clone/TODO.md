@@ -1,21 +1,24 @@
-# Fix GitHub Pages Deployment Error
+# HeritageTimeline Red UI Color Update
 
-## Problem
-- gh-pages is looking for 'build' directory but Vite builds to 'dist' by default
-- Error: ENOENT: no such file or directory, stat 'build'
+## Tasks to Complete:
 
-## Solution Plan
-- [x] Analyze current configuration
-- [x] Update vite.config.js to build to 'build' directory instead of 'dist'
-- [x] Add .nojekyll file to prevent Jekyll processing
-- [x] Create public directory for future builds
-- [x] Test deployment - SUCCESS!
+- [x] Update timeline line gradient from blue-to-red to red-to-darker-red
+- [x] Change all timeline dots from blue (primary-600) to red (accent-600)
+- [x] Change all year badges from blue (primary-600) to red (accent-600)
+- [x] Change all decorative elements from blue (primary-600) to red (accent-600)
+- [x] Update section header badge to use red colors
+- [x] Update gradient background in call-to-action section to use red tones
+- [x] Use darker red variant for highlighted events to maintain distinction
+- [x] Test the visual changes
 
-## Steps to Complete
-1. [x] Configure Vite build output directory to 'build'
-2. [x] Add .nojekyll file to build directory
-3. [x] Create public/.nojekyll for future builds
-4. [x] Test gh-pages deployment - SUCCESSFUL!
+## Progress:
+- [x] Plan approved by user
+- [x] Implementation completed successfully
 
-## ✅ DEPLOYMENT FIXED!
-The GitHub Pages deployment error has been resolved. The site should now deploy successfully.
+## Changes Made:
+- Timeline line: Changed from `from-primary-600 to-accent-600` to `from-accent-500 to-accent-700`
+- Timeline dots: Changed from `bg-primary-600` to `bg-accent-600` (normal) and `bg-accent-700` (highlighted)
+- Year badges: Changed from `bg-primary-600` to `bg-accent-600` (normal) and `bg-accent-700` (highlighted)
+- Decorative elements: Changed from `bg-primary-600` to `bg-accent-600` (normal) and `bg-accent-700` (highlighted)
+- Section header: Enhanced red color contrast with `text-accent-700` and `text-accent-300`
+- Call-to-action background: Changed from generic `gradient-bg` to red-themed `from-accent-800 via-accent-700 to-accent-900`
