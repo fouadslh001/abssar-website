@@ -7,5 +7,5 @@ export default defineConfig({
     port: 8000,
     host: true
   },
-  base: process.env.VITE_BASE_PATH || "abssar-website"
+  base: process.env.VITE_BASE_PATH || "/"
 })
