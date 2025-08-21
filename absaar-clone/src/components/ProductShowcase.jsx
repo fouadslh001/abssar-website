@@ -1,5 +1,6 @@
 import React from 'react'
 import jumpStartersImage from '../assets/images/jump-starters2.jpg'
+import mainWeldingVideo from '../assets/images/main-welding-background.mp4'
 
 const ProductShowcase = () => {
   // Error handler for video background fallback
@@ -25,8 +26,7 @@ const ProductShowcase = () => {
             onError={handleVideoError}
             poster="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&h=1080&fit=crop&crop=center"
           >
-            <source src="https://cdn.pixabay.com/vimeo/459761333/welding-59308.mp4?width=1280&hash=b0e0b0e0b0e0b0e0b0e0b0e0b0e0b0e0b0e0b0e0" type="video/mp4" />
-            <source src="https://player.vimeo.com/external/459761333.hd.mp4?s=7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b7b&profile_id=175" type="video/mp4" />
+            <source src={mainWeldingVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

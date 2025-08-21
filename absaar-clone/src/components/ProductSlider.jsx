@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import product1 from '../assets/images/product1.jpg'
-import product2 from '../assets/images/product2.jpg'
+import product2 from '../assets/images/product2.png'
 import product3 from '../assets/images/product3.jpg'
 import product4 from '../assets/images/product4.jpg'
 
@@ -12,19 +12,19 @@ const ProductSlider = () => {
 
   const products = [
     { 
-      title: "Inverter Welding Machine", 
+      title: "Schweißgerät MIG 90A", 
       image: product1,
       description: "Professional inverter welding technology for industrial applications",
       features: ["Digital display", "Portable design", "Advanced cooling"]
     },
     { 
-      title: "Pro Polisher 1200W", 
+      title: "Battery Charger Pro 8", 
       image: product2,
       description: "High-performance polishing equipment for automotive professionals",
       features: ["Variable speed", "Ergonomic grip", "Dust collection"]
     },
     { 
-      title: "Battery Charger 11A", 
+      title: "Schweißgerät MAG 160A", 
       image: product3,
       description: "Intelligent charging system with multi-stage technology",
       features: ["Smart charging", "LED indicators", "Safety protection"]
@@ -80,14 +80,14 @@ const ProductSlider = () => {
     <section className="section-padding bg-gray-50 dark:bg-gray-800">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block px-4 py-2 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 rounded-full text-sm font-semibold mb-4">
             OUR PRODUCTS
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
             Engineered to Perform
           </h2>
-          <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
             Discover our comprehensive range of power solutions, each designed with German precision and built to exceed expectations.
           </p>
         </div>
@@ -102,22 +102,23 @@ const ProductSlider = () => {
             >
               {products.map((product, index) => (
                 <div key={index} className="w-full flex-shrink-0">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                     {/* Image */}
-                    <div className="relative h-64 lg:h-96 overflow-hidden">
+                    <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem] overflow-hidden">
                       <img
                         src={product.image}
                         alt={product.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain sm:object-cover transition-all duration-300 hover:scale-105"
+                        loading="lazy"
                         onError={(e) => {
                           e.target.src = `https://via.placeholder.com/600x400/ef4444/ffffff?text=${encodeURIComponent(product.title)}`
                         }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
                     </div>
 
                     {/* Content */}
-                    <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="p-6 sm:p-8 md:p-6 lg:p-8 xl:p-12 flex flex-col justify-center">
                       <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                         {product.title}
                       </h3>
@@ -169,12 +170,12 @@ const ProductSlider = () => {
             onClick={prevSlide}
             onMouseEnter={handleLeftHoverEnter}
             onMouseLeave={handleHoverLeave}
-            className={`absolute left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 ${
+            className={`absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 z-10 ${
               isHoveringLeft ? 'opacity-80 scale-110' : ''
             }`}
             aria-label="Previous product"
           >
-            <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M15 19l-7-7 7-7"></path>
             </svg>
           </button>
@@ -183,12 +184,12 @@ const ProductSlider = () => {
             onClick={nextSlide}
             onMouseEnter={handleRightHoverEnter}
             onMouseLeave={handleHoverLeave}
-            className={`absolute right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 ${
+            className={`absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-2 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 z-10 ${
               isHoveringRight ? 'opacity-80 scale-110' : ''
             }`}
             aria-label="Next product"
           >
-            <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M9 5l7 7-7 7"></path>
             </svg>
           </button>
