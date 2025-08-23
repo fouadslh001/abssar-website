@@ -7,8 +7,20 @@ export default defineConfig({
     port: 8000,
     host: true
   },
-  base: process.env.VITE_BASE_PATH || "/",
   build: {
-    outDir: 'dist'
-  }
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    minify: 'esbuild',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          emailjs: ['@emailjs/browser']
+        }
+      }
+    }
+  },
+  base: './',
+  assetsInclude: ['**/*.mp4', '**/*.webm', '**/*.ogg']
 })

@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from '../contexts/TranslationContext'
 import { articlesData } from '../data/articles'
 
 const EngineeringExcellence = () => {
+  const { t } = useTranslation()
   // Get the first 4 articles for display
   const articles = articlesData.slice(0, 4)
 
@@ -12,13 +14,13 @@ const EngineeringExcellence = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-accent-100 dark:bg-accent-900 text-accent-600 dark:text-accent-400 rounded-full text-sm font-semibold mb-4">
-            FEATURED ARTICLES
+            {t('engineeringExcellence.badge')}
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Latest Engineering Insights
+            {t('engineeringExcellence.title')}
           </h2>
           <p className="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
-            Stay updated with the latest developments in engineering, technology, and innovation. Our expert team shares insights, research findings, and industry trends that shape the future of power solutions.
+            {t('engineeringExcellence.description')}
           </p>
         </div>
 
@@ -36,7 +38,7 @@ const EngineeringExcellence = () => {
                 </span>
                 {article.featured && (
                   <span className="inline-block px-3 py-1 bg-accent-600 text-white rounded-full text-xs font-semibold">
-                    FEATURED
+                    {t('engineeringExcellence.featured')}
                   </span>
                 )}
               </div>
@@ -63,7 +65,7 @@ const EngineeringExcellence = () => {
                   to={`/articles/${article.slug}`}
                   className="inline-flex items-center text-accent-600 hover:text-accent-700 font-semibold transition-colors duration-200 group-hover:translate-x-2 transform transition-transform"
                 >
-                  Read More
+                  {t('engineeringExcellence.readMore')}
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -78,16 +80,16 @@ const EngineeringExcellence = () => {
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-accent-600 to-accent-700 rounded-2xl p-8 lg:p-12 text-white">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-              Explore All Engineering Articles
+              {t('engineeringExcellence.ctaTitle')}
             </h3>
             <p className="text-lg lg:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Dive deeper into our comprehensive library of technical articles, research papers, and industry insights. Stay ahead with the latest in engineering innovation.
+              {t('engineeringExcellence.ctaDescription')}
             </p>
             <Link
               to="/articles"
               className="inline-block bg-white text-accent-600 font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105"
             >
-              View All Articles
+              {t('engineeringExcellence.viewAllArticles')}
             </Link>
           </div>
         </div>

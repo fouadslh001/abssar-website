@@ -24,7 +24,7 @@ const Home = () => {
         <Hero />
         <InnovationSection />
         <EngineeringExcellence />
-        
+        <HeritageTimeline />
         <StatsSection />
         <ContactForm />
       </main>

@@ -1,28 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from '../contexts/TranslationContext'
 import logoWhite from '../assets/images/logo_white.png'
 
 const Footer = () => {
+  const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
 
   const footerLinks = {
     products: [
-      { name: 'Welding Equipment', href: '#' },
-      { name: 'Jump Starters', href: 'https://nexa.lu/collections/battery-chargers-jump-starters' },
-      { name: 'Polishers', href: 'https://nexa.lu/collections/absaar-polisher' },
-      { name: 'Solar Solutions', href: 'https://nexa.lu/collections/absaar-solar-kits' },
+      { name: t('footer.productLinks.weldingEquipment'), href: '#' },
+      { name: t('footer.productLinks.jumpStarters'), href: 'https://nexa.lu/collections/battery-chargers-jump-starters' },
+      { name: t('footer.productLinks.polishers'), href: 'https://nexa.lu/collections/absaar-polisher' },
+      { name: t('footer.productLinks.solarSolutions'), href: 'https://nexa.lu/collections/absaar-solar-kits' },
     ],
     company: [
-      { name: 'About Us', href: '#heritage' },
-      { name: 'Our Heritage', href: '#heritage' },
-      { name: 'Innovation', href: '#innovation' },
-      { name: 'Contact', href: '#contact' },
+      { name: t('footer.companyLinks.aboutUs'), href: '#heritage' },
+      { name: t('footer.companyLinks.ourHeritage'), href: '#heritage' },
+      { name: t('footer.companyLinks.innovation'), href: '#innovation' },
+      { name: t('footer.companyLinks.contact'), href: '#contact' },
     ],
     legal: [
-      { name: 'Privacy Policy', href: '/privacy-policy', isRoute: true },
-      { name: 'Imprint', href: '/imprint', isRoute: true },
-      { name: 'Terms of Service', href: '/terms-of-service', isRoute: true },
-      { name: 'Warranty', href: '/warranty', isRoute: true },
+      { name: t('footer.legalLinks.privacyPolicy'), href: '/privacy-policy', isRoute: true },
+      { name: t('footer.legalLinks.imprint'), href: '/imprint', isRoute: true },
+      { name: t('footer.legalLinks.termsOfService'), href: '/terms-of-service', isRoute: true },
+      { name: t('footer.legalLinks.warranty'), href: '/warranty', isRoute: true },
     ]
   }
 
@@ -42,24 +44,24 @@ const Footer = () => {
                 />
               </Link>
               <p className="text-gray-300 leading-relaxed mb-6">
-                German Engineering Excellence Since 1969
+                {t('footer.tagline')}
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Pioneering power technology with uncompromising quality and relentless innovation. From automotive charging to professional welding equipment, we power Europe's future.
+                {t('footer.description')}
               </p>
             </div>
 
             {/* Contact Info */}
             <div className="space-y-2 text-sm">
               <p className="text-gray-300">
-                <span className="font-semibold">Address:</span><br />
-                9 Rue du chemin de Fer<br />
-                8057 Bertrange, Luxembourg
+                <span className="font-semibold">{t('footer.address')}</span><br />
+                Nº191, Hay Tichka<br />
+                45800 Tinghir Morocco
               </p>
               <p className="text-gray-300">
-                <span className="font-semibold">Email:</span><br />
+                <span className="font-semibold">{t('footer.email')}</span><br />
                 <a href="mailto:info@absaar.com" className="text-primary-400 hover:text-primary-300 transition-colors duration-200">
-                  info@absaar.com
+                  info@dspinvest.ma
                 </a>
               </p>
             </div>
@@ -67,7 +69,7 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Products</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footer.products')}</h4>
             <ul className="space-y-3">
               {footerLinks.products.map((link, index) => (
                 <li key={index}>
@@ -86,7 +88,7 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Company</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footer.company')}</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
@@ -103,7 +105,7 @@ const Footer = () => {
 
           {/* Legal & Shop */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Legal</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footer.legal')}</h4>
             <ul className="space-y-3 mb-8">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
@@ -125,7 +127,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-primary-700 hover:to-accent-700 transition-all duration-200 transform hover:scale-105 text-sm"
               >
-                Visit Our Shop
+                {t('footer.visitShop')}
               </a>
             </div>
           </div>
@@ -138,7 +140,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-sm text-gray-400">
-              © {currentYear} ABSAAR. All rights reserved.
+              © {currentYear} ABSAAR. {t('footer.copyright')}
             </div>
 
             {/* Social Media */}
@@ -179,7 +181,7 @@ const Footer = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="flex items-center space-x-2 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-200 group"
             >
-              <span>Back to Top</span>
+              <span>{t('footer.backToTop')}</span>
               <svg 
                 className="w-4 h-4 transform group-hover:-translate-y-1 transition-transform duration-200" 
                 fill="none" 

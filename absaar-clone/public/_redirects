@@ -1,0 +1,18 @@
+# Netlify redirects for Single Page Application (SPA)
+# This ensures that all routes are handled by React Router
+
+# Handle all routes by serving index.html
+/*    /index.html   200
+
+# Optional: Redirect HTTP to HTTPS (uncomment if needed)
+# http://absaar-clone.netlify.app/*    https://absaar-clone.netlify.app/:splat    301!
+
+# Optional: Handle specific file extensions that should be served directly
+# *.js    /static/js/:splat    200
+# *.css   /static/css/:splat   200
+# *.png   /static/media/:splat 200
+# *.jpg   /static/media/:splat 200
+# *.jpeg  /static/media/:splat 200
+# *.gif   /static/media/:splat 200
+# *.svg   /static/media/:splat 200
+# *.mp4   /static/media/:splat 200

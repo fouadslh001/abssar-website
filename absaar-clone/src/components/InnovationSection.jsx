@@ -1,23 +1,26 @@
 import React from 'react'
+import { useTranslation } from '../contexts/TranslationContext'
 import germanEngineeringImg from '../assets/images/German-Engineering.jpg'
 import reliablePerformanceImg from '../assets/images/Reliable-Performance.jpg'
 import futureTechnologiesImg from '../assets/images/Future-Technologies.jpg'
 
 const InnovationSection = () => {
+  const { t } = useTranslation()
+  
   const innovations = [
     {
-      title: "German Engineering",
-      description: "Precision, quality, and innovation – that's our foundation. Built on deep-rooted expertise, we create solutions that meet the highest standards.",
+      title: t('innovation.germanEngineering.title'),
+      description: t('innovation.germanEngineering.description'),
       image: germanEngineeringImg
     },
     {
-      title: "Reliable Performance",
-      description: "Reliability is no coincidence. Our systems deliver consistent performance – anytime, under any conditions.",
+      title: t('innovation.reliablePerformance.title'),
+      description: t('innovation.reliablePerformance.description'),
       image: reliablePerformanceImg
     },
     {
-      title: "Future-Ready Technologies",
-      description: "We think ahead. With a focus on sustainability and tomorrow's tech, we build solutions that are ready for the future today.",
+      title: t('innovation.futureTechnologies.title'),
+      description: t('innovation.futureTechnologies.description'),
       image: futureTechnologiesImg
     }
   ]
@@ -28,11 +31,11 @@ const InnovationSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 rounded-full text-sm font-semibold mb-4">
-            OUR TECHNOLOGY
+            {t('innovation.badge')}
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">
-              Built on Innovation
+              {t('innovation.title')}
             </span>
           </h2>
         </div>
